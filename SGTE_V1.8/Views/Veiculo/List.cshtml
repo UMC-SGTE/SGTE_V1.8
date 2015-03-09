@@ -1,0 +1,166 @@
+﻿@model IEnumerable<SGTE_V1._8.Models.Tbl_Veiculo>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid" id="containerRelatorio">
+    <div class="model-header">
+        <h1>Lista de Funcionarios Cadastrados</h1>
+
+
+
+        <div class="col-md-3 pull-right">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" placeholder="Pesquisar" id="filter" />
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="modal-body">
+            <table class="table table-hover table-condensed" id="tableList">
+                <thead>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cod_Veiculo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Placa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>
+                <!--<th>
+                    @Html.DisplayNameFor(model => model.Renavam)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Licenca)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Chassi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ano_Fabricacao)
+                </th>
+                <th>
+                     @Html.DisplayNameFor(model => model.Num_Lugares)
+                </th>-->
+                <th>
+                     @Html.DisplayNameFor(model => model.Lugares_Vagos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ativo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tbl_Escola.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tbl_Veiculo2.Placa)
+                </th>
+                <th></th>
+
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    if (item.Ativo == 1)
+                    {
+                        <tbody class="searchable">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cod_Veiculo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Placa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <!--<td>
+                     @Html.DisplayFor(modelItem => item.Renavam)
+                </!--td>
+                <td>
+                     @Html.DisplayFor(modelItem => item.Cidade)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Licenca)
+                 </td>
+                <td>
+                     @Html.DisplayFor(modelItem => item.Chassi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano_Fabricacao)
+                </td>
+                <td>
+                     @Html.DisplayFor(modelItem => item.Num_Lugares)
+                </td>-->
+                <td>
+                     @Html.DisplayFor(modelItem => item.Lugares_Vagos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tbl_Escola.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tbl_Veiculo2.Placa)
+                </td>
+
+                        <td id="botaoLista" class="btn btn-default btn-xs">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Deletar", "Delete", new { id = item.ID })
+                        </td>
+                        </tbody>
+
+                    }
+                }
+
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="col-md-1" id="voltarBotao">
+    @Html.ActionLink("Voltar ", "Index", "Funcionario", null, new { @class = "btn btn-sample2" })
+</div>
+
+
+<div class="col-md-offset-11">
+    @Html.ActionLink("Cadastrar Novo", "Create", null, new { @class = "btn btn-sample" })
+</div>
+<br>
+<br>
+
+
+<script type="text/javascript">
+    $(function(){
+        $('#filter').keyup(function () {
+
+            var rex = new RegExp($(this).val(), 'i');
+            $('.searchable tr').hide();
+            $('.searchable tr').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+        });
+    });
+</script>
+

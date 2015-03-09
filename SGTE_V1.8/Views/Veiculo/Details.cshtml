@@ -1,0 +1,147 @@
+﻿@model SGTE_V1._8.Models.Tbl_Veiculo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br>
+<div class="col-md-1" id="voltarBotao">
+    @Html.ActionLink("Voltar", "List", null, new { @class = "btn btn-sample2" })
+</div>
+<!--@Html.ActionLink("Voltar", "Index") -->
+
+<div class="model-header" id="containerRelatorio">
+    <h1>Detalhes Funcionario</h1>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cod_Veiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cod_Veiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renavam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renavam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Licenca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Licenca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chassi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chassi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ano_Fabricacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ano_Fabricacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Num_Lugares)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Num_Lugares)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lugares_Vagos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lugares_Vagos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Escola.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Escola.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Veiculo2.Placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Veiculo2.Placa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <div class="col-md-offset-5">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning" })
+    </div>
+
+
+</p>
